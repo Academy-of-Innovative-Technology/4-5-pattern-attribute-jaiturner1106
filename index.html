@@ -1,17 +1,50 @@
+
 <!DOCTYPE html>
 <html>
 
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>4.5 patterns</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width">
+ <title>4.5 patterns</title>
+ <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
+
 <body>
-  Hello world
-  <script src="script.js"></script>
+ Hello world
+ <script src="script.js"></script>
+
+
+ <form action="/submit_osis" method="POST" autocomplete="on">
+   <label for="osis-number">OSIS Number:</label>
+   <input type="text" id="osis-number" name="osis_number" pattern="[0-9]{8}" title="Must be exactly eight digits (0-9)" required>
+   <input type="submit" value="Submit OSIS">
+</form>
+
+
+<form action="/submit_password" method="POST">
+   <label for="password">Password:</label>
+   <input type="password" id="password" name="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+   <input type="submit" value="Submit Password">
+</form>
+
+
+<form action="/submit_credit_card" method="POST">
+   <label for="cc-number">Credit Card Number:</label>
+   <input type="text" id="cc-number" name="cc_number"
+          pattern="[\d]{4}[\s|-]?[\d]{4}[\s|-]?[\d]{4}[\s|-]?[\d]{4}"
+          title="Enter a 16-digit credit card number, optionally separated by spaces or hyphens" required>
+   <input type="submit" value="Submit Credit Card">
+</form>
+
+
+
 
 </body>
 
+
 </html>
+
